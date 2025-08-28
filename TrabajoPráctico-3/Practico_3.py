@@ -73,7 +73,7 @@ elif media == mediana and mediana == moda:
 print("--------------------Ejercicio 7--------------------")
 
 cadena = input("Ingrese una palabra: ")
-
+#Verifico si el ultimo caracter de la cadena tiene una vocal
 if cadena[-1].lower() in "aeiou":
     cadena += "!"
 
@@ -119,9 +119,11 @@ elif magnitud >= 7:
 print("--------------------Ejercicio 10--------------------")
 
 hemiferio = input("Ingrese en que hemiferio se encuentra (N/S): ").upper()
+#Defino unos arrays de Meses y Días
 MESES = range(1,13)
 DIAS = range(1, 32)
 
+#Según el hemiferio utilizado guardo las estaciones en un diccionario
 if hemiferio == "N":
     estaciones = {1: "Invierno", 2: "Primavera", 3: "Verano", 4: "Otoño"}
 elif hemiferio == "S":
@@ -129,11 +131,14 @@ elif hemiferio == "S":
 else:
     print("Hemiferio invalido")
 
+#Se ingresa una fecha en formato dd/mm y la divido en 2 variables
 fecha = input("Ingrese que mes y día del año es (DD/MM): ")
 DD = int(fecha.split("/")[0])
 MM = int(fecha.split("/")[1])
 
+#Valido que la fecha sea valida
 if DD in DIAS and MM in MESES:
+    #Valido en que estación se encuentra y la muestro por pantalla
     if (MM == 12 and DD >= 21) or (MM == 3 and DD <= 20) or (MM >= 1 and MM <= 2):
         print(estaciones[1])
     elif (MM == 3 and DD >= 21) or (MM == 6 and DD <= 20) or (MM >= 4 and MM <= 5):
